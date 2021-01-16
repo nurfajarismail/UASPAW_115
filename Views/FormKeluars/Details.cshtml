@@ -1,0 +1,42 @@
+﻿@model UASPAW_115.Models.FormKeluar
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FormKeluar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TanggalKeluar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TanggalKeluar)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdKendaraanNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdKendaraanNavigation.IdKendaraan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdMasukNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdMasukNavigation.IdMasuk)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTarifNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTarifNavigation.IdTarif)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdKeluar">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

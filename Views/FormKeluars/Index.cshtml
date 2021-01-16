@@ -1,0 +1,53 @@
+﻿@model IEnumerable<UASPAW_115.Models.FormKeluar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TanggalKeluar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdKendaraanNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMasukNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTarifNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TanggalKeluar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdKendaraanNavigation.IdKendaraan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMasukNavigation.IdMasuk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTarifNavigation.IdTarif)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdKeluar">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdKeluar">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdKeluar">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
